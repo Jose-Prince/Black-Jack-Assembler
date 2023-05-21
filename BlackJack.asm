@@ -1,15 +1,12 @@
 ; -----------------------------------------------
 ; UNIVERSIDAD DEL VALLE DE GUATEMALA
-; Organización de computadoras y Assembler
+; Organizaciï¿½n de computadoras y Assembler
 ; Ciclo 1 - 2023
 ;
 ; Nombre: BlackJack.asm
-; Descripción: suma de dos números enteros e impresión
-; de resultado en ventana de ejecución.
-; Autor: Mod. por KB
+; Descripciï¿½n: Juego de Balck Jack en Assembler
+; Autor: JosÃ© Prince
 ;
-; EAX: operando 2 de suma y destino resultado.
-; printf: imprime res suma almacenado en eax
 ; ----------------------------------------------- */
 
 .386
@@ -37,15 +34,15 @@ public main
 main proc
 	
 mov ax, dx ;Se mueve el registro dx al registro ax
-xor dx,dx ;
-mov cx, 11
+xor dx,dx ;Compara que dx sea diferente de dx
+mov cx, 11 ;Mueve a cx el valor de 11, este valor define el intervalo de 11 npumeros
 div cx
 
 add dl, '0'
 
-mov randomNum, dl
+mov randomNum, dl ;Mueve el registro dl a la variable randonNum
 
-sub dl, 47
+sub dl, 47 ;MOdifica el intervalo para que sea de 0 a 11
 
 mov randomNum, dl
 
@@ -55,10 +52,6 @@ push offset fmt ; pasar el formato como argumento a printf
 call printf ; llamar a printf para imprimir el valor de eax
 push 0
 call exit ; salir del programa
-
-
-
-
 
 main endp
 end
